@@ -55,11 +55,50 @@ A Necessary condition for optimal solutions of convex problem.
 3. Complementary slackness $\lambda_i f_i(x) = 0$. It make sure that $f_0(x^{\star}) = L(x^{\star}, \lambda^{\star}, \upsilon^{\star})$
 4. Gradient of L with respect to x is 0. It make sure that $g(\lambda^{\star}, \upsilon^{\star}) = L(x^{\star}, \lambda^{\star}, \upsilon^{\star})$
 
+**Shadow Price**
 
+Given the primal Problem
 
-## Reference
+$$
+\begin{aligned}
+\min_x {f_0(x)} \\ 
+f_i(x) &<= u_i, \quad i=1...m\\
+h_i(x) &= v_i, \quad i=1...p
+\end{aligned}
+$$
 
-- Boyd & Vandenberghe: Convex Optimization
-- Cornuejols, Pena & Tutuncu: Optimization Methods in Finance
-- Kolm, Tutuncu, Fabozzi (2013): 60 Years of Portfolio Optimization: Practical challenges and current trends
-- Boyd, Busseti, Nystrup, Speth(2017): Multi-Period Trading via Convex Optimization
+The Associated Dual problem is 
+
+$$
+\begin{aligned}
+\max_{\lambda, \upsilon} &{g(\lambda, \upsilon)} - u^T\lambda - v^T\upsilon\\
+\lambda &>=0
+\end{aligned}
+$$
+
+When Strong duality holds, The optimal value of dual problem equals the optimal value of primal problem. Hence the primal optimal value can be regared as a function of u and v: $p^{\star}(u, v)$. 
+
+$$
+\begin{aligned}
+\lambda_i^{\star} = - \frac{\partial p^{\star}(0,0)}{\partial u_i} \\
+\upsilon_i^{\star} = - \frac{\partial p^{\star}(0,0)}{\partial v_i} 
+\end{aligned}
+$$
+
+## Literature Summary
+
+1. Optimization Theory
+    - Boyd & Vandenberghe: Convex Optimization
+    - Cornuejols, Pena & Tutuncu: Optimization Methods in Finance
+    - Kolm, Tutuncu, Fabozzi (2013): 60 Years of portfolio optimization: Practical challenges and current trends
+
+2. Survey paper on Portfolio Optimization
+
+    - Steinbach(2001); Rubinstein(2002); Fabozzi, Kolm, **Pachamanova & Focardi(2007)**; Markowitz(2014) provides great survey paper on the topic.
+
+3. The Error Maximization Issue
+    - DeMiguel, Garlappi & Uppal (2009), Jobson & Korkie (1981) and Jorion (1985) finds that the equal weight portfolio outperforms the mean variance efficient portfolio in a lot of scenarios
+    - Green & Hollifield (1992) Find that Mean variance optimization leads to result that are not efficiently diversified.
+    - Michaud (1998) argues that the navive optimization is an "Error Maximizers"
+    - Kritzman (2006) argued that the error maximizer phenomenon is more significant when assets are highly correlated
+    - 
