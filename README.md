@@ -90,15 +90,22 @@ $$
 1. Optimization Theory
     - Boyd & Vandenberghe: Convex Optimization
     - Cornuejols, Pena & Tutuncu: Optimization Methods in Finance
-    - Kolm, Tutuncu, Fabozzi (2013): 60 Years of portfolio optimization: Practical challenges and current trends
 
 2. Survey paper on Portfolio Optimization
 
     - Steinbach(2001); Rubinstein(2002); Fabozzi, Kolm, **Pachamanova & Focardi(2007)**; Markowitz(2014) provides great survey paper on the topic.
+    - Kolm, Tutuncu, Fabozzi (2013): 60 Years of portfolio optimization: Practical challenges and current trends
+
 
 3. The Error Maximization Issue
     - DeMiguel, Garlappi & Uppal (2009), Jobson & Korkie (1981) and Jorion (1985) finds that the equal weight portfolio outperforms the mean variance efficient portfolio in a lot of scenarios
     - Green & Hollifield (1992) Find that Mean variance optimization leads to result that are not efficiently diversified.
     - Michaud (1998) argues that the navive optimization is an "Error Maximizers"
     - Kritzman (2006) argued that the error maximizer phenomenon is more significant when assets are highly correlated
+    - Best & Grauer (1991 a/b) founds that the optimization is more sensitive to errors in expected return than in variance
+    - Chopra & Ziemba (1993) and Kallberg & Ziemba (1984) founds that optimziation is more senstive than errors in variance than in covariance
+    - Jagannathan & Ma (2003) provide the theoretical basis for adding robust constraints
+    - Trojani & Vanini (2002) and DeMiguel & Nogales (2009) talks about using robust statistics as input in optimization
+
+4. Transaction Cost
     - 
