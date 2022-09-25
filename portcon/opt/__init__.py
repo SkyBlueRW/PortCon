@@ -1,3 +1,3 @@
 """
-Optimization Based Portfolio Construction
+Optimizer component for portfolio construction
 """

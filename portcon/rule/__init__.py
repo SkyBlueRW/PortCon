@@ -1,3 +1,3 @@
 """
-Rule Based Portfolio Construction component
+Rule Based component for portfolio construction
 """
