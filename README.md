@@ -4,9 +4,13 @@
 
 ## Technical Details in Convex Optimization
 
-Convext Optimization is the minimization of a convext function within a convex set. What makes a convex function special is that local information (gradient or so) can lead us to global opmima. 
+Convex Optimization is the minimization of a convext function within a convex set. What makes a convex function special is that local information (gradient or so) can lead us to global opmima. 
 
-$f(y) - f(x) >= \bigtriangledown f(x)(y - x)$
+$$
+\begin{aligned}
+f(y) - f(x) >= \bigtriangledown f(x)(y - x)
+\end{aligned}
+$$
 
 A convex Problem can be written in the following **standard form**. For such an optimization to be convex optimization, it is required that $f_0(x)$ if convex and $h_i(x)$ is affine. 
 
