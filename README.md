@@ -52,7 +52,7 @@ A Necessary condition for optimal solutions of convex problem.
 
 1. Primal feasibility
 2. Dual feasibility : $\lambda >=0$
-3. Complementary slackness ($\lambda_i * f_i(x) = 0$). It make sure that $f_0(x^{\star}) = L(x^{\star}, \lambda^{\star}, \upsilon^{\star})$
+3. Complementary slackness $\lambda_i f_i(x) = 0$. It make sure that $f_0(x^{\star}) = L(x^{\star}, \lambda^{\star}, \upsilon^{\star})$
 4. Gradient of L with respect to x is 0. It make sure that $g(\lambda^{\star}, \upsilon^{\star}) = L(x^{\star}, \lambda^{\star}, \upsilon^{\star})$
 
 
