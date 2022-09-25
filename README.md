@@ -2,7 +2,7 @@
 # Portfolio Construction with Convex optimization
 
 
-## Technical Details in Convex Optimization
+## Basic Technical Details in Convex Optimization
 
 Convex Optimization is the minimization of a convex function on a convex set. What makes a convex function special is that local information (gradient or so) can lead us to global opmima. 
 
