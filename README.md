@@ -2,6 +2,20 @@
 # Portfolio Construction with Convex optimization
 
 
+## Available Models
+
+**Risk Budget**
+
+When the risk measure is a first order homogeneous function of portfolio, we will be able to decompos the total portfolio risk $R_w$ as summations risk contribution $rc_{w}$ for each securitys.
+
+$$
+\begin{aligned}
+R_w &= \sum_{i=1}^N rc_{w, i}\\
+&= \sum_{i=1}^N x_i \frac{\partial R_w}{\partial x_i}
+\end{aligned}
+$$
+
+
 ## Constraint Attribution
 
 The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. From a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. It requires another perspective to look into how is the constraints working for the portfolios. Constraint attribution is one of the techniques that we can rely on for such purpose.
