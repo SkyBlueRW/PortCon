@@ -15,6 +15,14 @@ R_w &= \sum_{i=1}^N rc_{w, i}\\
 \end{aligned}
 $$
 
+Based on the additivity of risk contribution. We can allocate predefined risk (risk contribution): $b_i$ to each securities.
+
+$$
+\begin{aligned}
+w_i * \frac{\partial R_w}{\partial x_i} &= b_i * R_w
+\end{aligned}
+$$
+
 
 ## Constraint Attribution
 
