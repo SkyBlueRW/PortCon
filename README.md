@@ -31,6 +31,8 @@ The goal of constraint attribution is to decompose the ex-post performance into 
                 I. Projection on alpha characteristic portfolio
                 II. Residual (Orthogonal to alpha characteristic portfolio)   
 
+- Stubbs& Vandenbussche (2010) focused more on the ex-post return attribution. Using the ex-post return to understand how is constraint impacting the portfolio. It can help to answer the question: can a certain optimization constraint help to improve ex-post performance? They also provide ways to do such attribution for risk constained portfolio. It will provide a slightly different economic intuition for the decomposition.
+
 
 ## Basic Technical Details in Convex Optimization
 
