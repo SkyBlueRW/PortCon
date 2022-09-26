@@ -6,6 +6,18 @@
 
 The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. From a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. It requires another perspective to look into how is the constraints working for the portfolios. Constraint attribution is one of the techniques that we can rely on for such purpose.
 
+
+**Literature on Constraint Attribution**
+
+- Grinold (2005) is the first  to propose the use of Lagrangian Dual decomposition (Basd on the first order condition of KKT). to addres the attribution analysis of portfolio constraints.
+- Tutuncu (2012) provides a sumarization on previous research on the topics. He pointed that for a Mean Variance optimization with linear constraint, we can use the Lagrangian dual decomposition to perform the following decomposition:
+        a. Utility decomposition
+        b. Implied alpha decomposition
+        c. Active weight decomposition
+        d. Alpha prediction return decomposition
+- Scherer & Xu (2007) improved the method based on Grinold (2005). They propose to perform Lagrangian Dual decomposition on the quadratic utility of a MVO. They believed that the investors cared about the utility function instead of weights on individual securities.
+
+
 ## Basic Technical Details in Convex Optimization
 
 Convex Optimization is the minimization of a convex function on a convex set. What makes a convex function special is that local information (gradient or so) can lead us to global opmima. 
