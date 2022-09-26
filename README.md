@@ -11,10 +11,12 @@ The goal of constraint attribution is to decompose the ex-post performance into 
 
 - Grinold (2005) is the first  to propose the use of Lagrangian Dual decomposition (Basd on the first order condition of KKT). to addres the attribution analysis of portfolio constraints.
 - Tutuncu (2012) provides a sumarization on previous research on the topics. He pointed that for a Mean Variance optimization with linear constraint, we can use the Lagrangian dual decomposition to perform the following decomposition:
+
         a. Utility decomposition
         b. Implied alpha decomposition
         c. Active weight decomposition
         d. Alpha prediction return decomposition
+        
 - Scherer & Xu (2007) improved the method based on Grinold (2005). They propose to perform Lagrangian Dual decomposition on the quadratic utility of a MVO. They believed that the investors cared about the utility function instead of weights on individual securities.
 
 
