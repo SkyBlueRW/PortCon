@@ -2,6 +2,10 @@
 # Portfolio Construction with Convex optimization
 
 
+## Constraint Attribution
+
+The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. While from a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. Hence a tool to align the ex-post performance and constraints will play a critical rule in terms of determine if the constraints are working as expected ex-post.
+
 ## Basic Technical Details in Convex Optimization
 
 Convex Optimization is the minimization of a convex function on a convex set. What makes a convex function special is that local information (gradient or so) can lead us to global opmima. 
@@ -85,7 +89,7 @@ $$
 \end{aligned}
 $$
 
-## Literature Summary
+## Reference
 
 1. Optimization Theory
     - Boyd & Vandenberghe: Convex Optimization
@@ -96,16 +100,7 @@ $$
     - Steinbach(2001); Rubinstein(2002); Fabozzi, Kolm, **Pachamanova & Focardi(2007)**; Markowitz(2014) provides great survey paper on the topic.
     - Kolm, Tutuncu, Fabozzi (2013): 60 Years of portfolio optimization: Practical challenges and current trends
 
-
-3. The Error Maximization Issue
-    - DeMiguel, Garlappi & Uppal (2009), Jobson & Korkie (1981) and Jorion (1985) finds that the equal weight portfolio outperforms the mean variance efficient portfolio in a lot of scenarios
-    - Green & Hollifield (1992) Find that Mean variance optimization leads to result that are not efficiently diversified.
-    - Michaud (1998) argues that the navive optimization is an "Error Maximizers"
-    - Kritzman (2006) argued that the error maximizer phenomenon is more significant when assets are highly correlated
-    - Best & Grauer (1991 a/b) founds that the optimization is more sensitive to errors in expected return than in variance
-    - Chopra & Ziemba (1993) and Kallberg & Ziemba (1984) founds that optimziation is more senstive than errors in variance than in covariance
-    - Jagannathan & Ma (2003) provide the theoretical basis for adding robust constraints
-    - Trojani & Vanini (2002) and DeMiguel & Nogales (2009) talks about using robust statistics as input in optimization
-
-4. Transaction Cost
-    - 
+3. Constraint Attribution
+    - Bernd Scherer & Xiaodong Xu (2007): The Impact of Constraints on Value-Added
+    - Robert Stubbs & Dieter Vendenbussche (2010): Constraint Attribution
+    - Jennifer Bender, Jyh-Huei Lee & Dan Stefek (2009): Decomposint the Impact of Portfolio Constraints
