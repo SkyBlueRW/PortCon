@@ -4,7 +4,7 @@
 
 ## Constraint Attribution
 
-The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. While from a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. Hence a tool to align the ex-post performance and constraints will play a critical rule in terms of determine if the constraints are working as expected ex-post.
+The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. From a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. It requires another perspective to look into how is the constraints working for the portfolios. Constraint attribution is one of the techniques that we can rely on for such purpose.
 
 ## Basic Technical Details in Convex Optimization
 
