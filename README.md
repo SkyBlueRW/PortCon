@@ -10,7 +10,7 @@ The goal of constraint attribution is to decompose the ex-post performance into 
 **Literature on Constraint Attribution**
 
 - Grinold (2005) is the first  to propose the use of Lagrangian Dual decomposition (Basd on the first order condition of KKT). to addres the attribution analysis of portfolio constraints.
-- Tutuncu (2012) provides a sumarization on previous research on the topics. He pointed that for a Mean Variance optimization with linear constraint, we can use the Lagrangian dual decomposition to perform the following decomposition:
+- Tutuncu (2012) provides a sumarization on previous research on the topics. He pointed that for a Mean Variance optimization with linear constraint, we can use the Lagrangian dual decomposition to perform the following decomposition on the optimized portfolio:
     
         a. Utility decomposition
 
@@ -21,6 +21,15 @@ The goal of constraint attribution is to decompose the ex-post performance into 
         d. Alpha prediction return decomposition
 
 - Scherer & Xu (2007) improved the method based on Grinold (2005). They propose to perform Lagrangian Dual decomposition on the quadratic utility of a MVO. They believed that the investors cared about the utility function instead of weights on individual securities.
+- Lee & Stefek (2009) provides further analysis based on the Lagrangian dual decomposition. The optimized portfolio with constraint can be  decomposed into the optimal portfolio (without constraint) and characteristic portfolios weighted by their shadow price. They further decomposed the characteristic portfolio into the projection on alpha characteristic portfolio and those orthogonal to the alpha characteristic portfolio. The second part can be viewed as the ex-ante risk that are note rewarded with ex-ante return
+    
+    Optimized Portfolio (with constraint)
+
+        a. Optimal portfolio (without constraint)
+        b. Corresponding characteristic portfolio for each constraint (Weighted by shadow price)
+
+            I. Projection on alpha characteristic portfolio
+            II. Residual (Orthogonal to alpha characteristic portfolio)   
 
 
 ## Basic Technical Details in Convex Optimization
