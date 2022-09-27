@@ -6,12 +6,19 @@
 
 **Risk Budget**
 
+
+```python
+from mosek_api import risk_budget
+
+optimized_weight = risk_budget(target_budget, covariance_matrix)
+```
+
 When the risk measure is a first order homogeneous function of portfolio, we will be able to decompos the total portfolio risk $R_w$ as summations risk contribution $rc_{w}$ for each securitys.
 
 $$
 \begin{aligned}
 R_w &= \sum_{i=1}^N rc_{w, i}\\
-&= \sum_{i=1}^N x_i \frac{\partial R_w}{\partial x_i}
+&= \sum_{i=1}^N w_i \frac{\partial R_w}{\partial w_i}
 \end{aligned}
 $$
 
@@ -22,6 +29,17 @@ $$
 w_i * \frac{\partial R_w}{\partial x_i} &= b_i * R_w
 \end{aligned}
 $$
+
+The above condition is unfortunately not convex directly. While when variance is used as risk measure, we will be able to formulate a restricted version of convext optimization on it. The first order optimal condition of the following optimization problem is exactly the risk budget condition. Hence we can rely on it for risk budget optimization
+
+$$
+\begin{aligned}
+Min_w &\frac{1}{2} w^T \Sigma w - c b^T log(z^T w) \\
+z^T w >=0
+\end{aligned}
+$$
+
+variable c can be used to scale the summation of budget b. Since leverage does not change the risk budget for first order homogenours risk measures. We can scale w to summation of 1 for fully invest constraint. 
 
 
 ## Constraint Attribution
