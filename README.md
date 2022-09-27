@@ -8,12 +8,14 @@
 
 
 ```python
+# Code Snipts
+
 from mosek_api import risk_budget
 
 optimized_weight = risk_budget(target_budget, covariance_matrix)
 ```
 
-When the risk measure is a first order homogeneous function of portfolio, we will be able to decompos the total portfolio risk $R_w$ as summations risk contribution $rc_{w}$ for each securitys.
+When the risk measure is a first order homogeneous function of portfolio, we will be able to decompose the total portfolio risk $R_w$ as summations risk contribution $rc_{w}$ for each securitys.
 
 $$
 \begin{aligned}
@@ -30,7 +32,7 @@ w_i * \frac{\partial R_w}{\partial x_i} &= b_i * R_w
 \end{aligned}
 $$
 
-The above condition is unfortunately not convex directly. While when variance is used as risk measure, we will be able to formulate a restricted version of convext optimization on it. The first order optimal condition of the following optimization problem is exactly the risk budget condition. Hence we can rely on it for risk budget optimization
+The above condition is unfortunately not convex directly. While when variance is used as risk measure, we will be able to formulate a restricted version of convex optimization on it. The first order optimal condition of the following optimization problem is exactly the risk budget condition. Hence we can rely on it for risk budget optimization
 
 $$
 \begin{aligned}
