@@ -34,7 +34,7 @@ The above condition is unfortunately not convex directly. While when variance is
 
 $$
 \begin{aligned}
-Min_w &\frac{1}{2} w^T \Sigma w - c b^T log(z^T w) \\
+Min_w \frac{1}{2} w^T \Sigma w - c b^T log(z^T w) \\
 z^T w >=0
 \end{aligned}
 $$
