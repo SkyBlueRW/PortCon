@@ -8,7 +8,7 @@
 
 
 ```python
-# Code Snipts
+# Code Demo
 
 from mosek_api import risk_budget
 
@@ -42,6 +42,19 @@ z^T w >=0
 $$
 
 variable c can be used to scale the summation of budget b. Since leverage does not change the risk budget for first order homogenours risk measures. We can scale w to summation of 1 for fully invest constraint. 
+
+
+**Risk Budget**
+
+Risk parity portfolio is the equal risk contribution case. It can be applied with equal risk contribution with the risk budget optimizer.
+
+```python
+# Code Demo
+
+from mosek_api import risk_parity
+
+optimized_weight = risk_parity(covariance_matrix)
+```
 
 
 ## Constraint Attribution
