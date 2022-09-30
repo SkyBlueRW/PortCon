@@ -4,6 +4,16 @@
 
 ## Available Models
 
+
+**Min Variance**
+
+```python
+from mosek_api import risk_budget
+
+optimized_weight = min_var(cov, long_only=True, budget=1, max_holding=None, min_holding=None)
+```
+
+
 **Risk Budget**
 
 
@@ -44,9 +54,9 @@ $$
 variable c can be used to scale the summation of budget b. Since leverage does not change the risk budget for first order homogenours risk measures. We can scale w to summation of 1 for fully invest constraint. 
 
 
-**Risk Budget**
+**Risk Parity**
 
-Risk parity portfolio is the equal risk contribution case. It can be applied with equal risk contribution with the risk budget optimizer.
+Risk parity portfolio is the equal risk contribution case. It is applied with equal risk contribution with the risk budget optimizer.
 
 ```python
 # Code Demo
@@ -55,6 +65,22 @@ from mosek_api import risk_parity
 
 optimized_weight = risk_parity(covariance_matrix)
 ```
+
+**Maximum Diversification Portfolio**
+
+```python
+from mosek_api import max_div
+
+# Pure Max diversification with fully invest 
+optimized_weight = max_div(cov, long_only=True)
+
+# Max diversification with vol target
+optimized_weight = max_div_vol(cov, max_std,
+                max_holding=None, min_holding=None,
+                budget=1, long_only=True)
+```
+
+
 
 
 ## Constraint Attribution
