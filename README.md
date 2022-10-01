@@ -6,6 +6,34 @@
 
 ### Mean Variance Optimization
 
+```python
+
+optimized_portfolio = mean_variance(
+    alpha, risk_aversion, cov, active_risk=False, active_alpha=False,
+    long_only=True, return_full_result=False,
+    benchmark=None, budget=None, max_budget=None,
+    max_holding=None, min_holding=None, max_active_holding=None, min_active_holding=None,
+    industry=None, max_ind=None, min_ind=None, max_active_ind=None, min_active_ind=None,
+    style=None, max_style=None, min_style=None, max_active_style=None, min_active_style=None,
+    prev_holding=None, max_turnover=None
+    )
+
+
+optimized_portfolio = max_ret(
+    alpha, active_alpha=False, long_only=True, return_full_result=False,
+    benchmark=None, budget=None, max_budget=None,
+    cov=None, max_std=None, max_active_std=None,
+    max_holding=None, min_holding=None, max_active_holding=None, min_active_holding=None,
+    industry=None, max_ind=None, min_ind=None, max_active_ind=None, min_active_ind=None,
+    style=None, max_style=None, min_style=None, max_active_style=None, min_active_style=None,
+    prev_holding=None, max_turnover=None
+    )
+
+optimized_portfolio = max_ir(
+    alpha, cov, max_holding=None, long_only=True
+    )
+```
+
 ### Risk Based Optimization 
 
 Traditional Mean-Variance optimization is **notoriously sensitive** to errors in the estimation of inputs. One way to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
@@ -116,9 +144,9 @@ optimized_weight = risk_parity(covariance_matrix)
 
 **Maximum Diversification Portfolio**
 
-Maximum Diversification portfolio as suggested by its name seeks to maximize the diversification ratio $frac{w^T \Sigma w}{w^T \sigma **0.5}$. In the financial theory, diversification has long been identified as the only "free lunch" in the investment world. The maximum diversification portfolio seeks to exploit the full potential of diversification in terms of correlation structure. It should be noted that the optimized portfolio is rather sensitive to estimation of correlation, which might cause problem in crash periods when correlation structure broke.
+Maximum Diversification portfolio as suggested by its name seeks to maximize the diversification ratio $\frac{w^T \Sigma w}{w^T \sigma **0.5}$. In the financial theory, diversification has long been identified as the only "free lunch" in the investment world. The maximum diversification portfolio seeks to exploit the full potential of diversification in terms of correlation structure. It should be noted that the optimized portfolio is rather sensitive to estimation of correlation, which might cause problem in crash periods when correlation structure broke.
 
-It can be applied with customized feasible set (other constraints like standard deviation threshold, max holding, etc)
+The maximum diversification is applied with quadractic optimization hence it can be applied with customized feasible set (other constraints like standard deviation threshold, max holding, etc)
 
 ```python
 from mosek_api import max_div
