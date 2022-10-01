@@ -17,24 +17,31 @@ optimized_weight = min_var(cov, long_only=True, budget=1, max_holding=None, min_
 
 Traditional Mean-Variance optimization is notoriously sensitive to errors in the estimation of inputs. One way to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
 
-    - Min Variance: 
-        a. Assmumption to equal MVO:When equal expected return for all securities
-        b. Optimization condition
+1. Min Variance: 
+    a. Assmumption to equal MVO:When equal expected return for all securities
+    b. Optimization condition
+
 $$
-\frac{\partial{\sigma (w_i)}}{\w_i} = \frac{\partial{\sigma (w_j)}}{\w_j}
+\begin{aligned}
+\frac{\partial{\sigma (w_i)}}{\partial w_i} = \frac{\partial{\sigma (w_j)}}{\partial w_j}
+\end{aligned}
 $$
-    - Risk Parity: 
-        a. Assumption to equal MVO: When equal return to risk contribution for all securities
-        b. Optimization condition
-            $$
-            \frac{\partial{\sigma (w_i)}}{\w_i} * w_i = \frac{\partial{\sigma (w_j)}}{\w_j} * w_j
-            $$            
-    - Maximum Diversification: 
-        a. 
-        b. Optimization condition
-            $$
-            \frac{\partial{\sigma (w_i)}}{\w_i} * \frac{1}{\Sigma_i} = \frac{\partial{\sigma (w_j)}}{\w_j} * \frac{1}{\Sigma_j}
-            $$  
+
+2. Risk Parity: 
+    a. Assumption to equal MVO: When equal return to risk contribution for all securities
+    b. Optimization condition
+
+$$
+\frac{\partial{\sigma (w_i)}}{\partial w_i} * w_i = \frac{\partial{\sigma (w_j)}}{\partial w_j} * w_j
+$$       
+
+3. Maximum Diversification: 
+    a. 
+    b. Optimization condition
+
+$$
+    \frac{\partial{\sigma (w_i)}}{\partial w_i} * \frac{1}{\Sigma_i} = \frac{\partial{\sigma (w_j)}}{\partial w_j} * \frac{1}{\Sigma_j}
+$$  
 
 
 
