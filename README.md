@@ -169,7 +169,30 @@ Black-Litterman is a Bayesian based method for robust portfolio.
 
 ## Constraint Attribution
 
+```python
+from mosek_api import implied_alpha_decompose, holding_decompose, return_attribute
+
+constraint_attr = holding_decompose(res_dict)
+constraint_attr = return_attribute(ret, holding_dict, block_name=None)
+```
+
 The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. From a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. It requires another perspective to look into how is the constraints working for the portfolios. Constraint attribution is one of the techniques that we can rely on for such purpose.
+
+**Lagrangian Dual Decomposition**
+
+For a portfolio optimization problem as below. Function f can stand for transaction cost, market impact ..etc. Function g refers to portfolio constraint that we look to decompose. 
+
+$$
+\begin{aligned}
+\max_x \quad &{\alpha^Tx - \frac{1}{2} \lambda x^TQx + \sum f_i(x)} \\
+g_i(x) &<=0
+\end{aligned}
+$$
+
+Assuming all constraint function g are diffrentiable, Scherer & Xu (2007) provide the following decomposition 
+
+
+
 
 
 **Literature on Constraint Attribution**
@@ -197,6 +220,8 @@ The goal of constraint attribution is to decompose the ex-post performance into 
                 II. Residual (Orthogonal to alpha characteristic portfolio)   
 
 - Stubbs& Vandenbussche (2010) focused more on the ex-post return attribution. Using the ex-post return to understand how is constraint impacting the portfolio. It can help to answer the question: can a certain optimization constraint help to improve ex-post performance? They also provide ways to do such attribution for risk constained portfolio. It will provide a slightly different economic intuition for the decomposition.
+
+
 
 
 ## Basic Technical Details in Convex Optimization
