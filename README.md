@@ -5,20 +5,14 @@
 ## Available Models
 
 
-**Min Variance**
-
-```python
-from mosek_api import risk_budget
-
-optimized_weight = min_var(cov, long_only=True, budget=1, max_holding=None, min_holding=None)
-```
-
 ### Risk Based Optimization 
 
 Traditional Mean-Variance optimization is notoriously sensitive to errors in the estimation of inputs. One way to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
 
 1. Min Variance: 
+    
     a. Assmumption to equal MVO:When equal expected return for all securities
+    
     b. Optimization condition
 
 $$
@@ -28,7 +22,9 @@ $$
 $$
 
 2. Risk Parity: 
+    
     a. Assumption to equal MVO: When equal return to risk contribution for all securities
+    
     b. Optimization condition
 
 $$
@@ -36,13 +32,30 @@ $$
 $$       
 
 3. Maximum Diversification: 
-    a. 
+    
+    a. Assumption to equal MVO: equal correlation and equal expected return for all securities
+    
     b. Optimization condition
 
 $$
-    \frac{\partial{\sigma (w_i)}}{\partial w_i} * \frac{1}{\Sigma_i} = \frac{\partial{\sigma (w_j)}}{\partial w_j} * \frac{1}{\Sigma_j}
+\frac{\partial{\sigma (w_i)}}{\partial w_i} * \frac{1}{\sigma_i} = \frac{\partial{\sigma (w_j)}}{\partial w_j} * \frac{1}{\sigma_j}
 $$  
 
+4. Risk Budget:
+
+    b. Optimization condition
+
+$$
+\frac{\partial{\sigma (w_i)}}{\partial w_i} * w_i / b_i = \frac{\partial{\sigma (w_j)}}{\partial w_j} * w_j / b_j
+$$  
+
+**Min Variance**
+
+```python
+from mosek_api import risk_budget
+
+optimized_weight = min_var(cov, long_only=True, budget=1, max_holding=None, min_holding=None)
+```
 
 
 **Risk Budget**
