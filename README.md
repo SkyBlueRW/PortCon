@@ -20,9 +20,9 @@ Traditional Mean-Variance optimization is notoriously sensitive to errors in the
     - Min Variance: 
         a. Assmumption to equal MVO:When equal expected return for all securities
         b. Optimization condition
-            $$
-            \frac{\partial{\sigma (w_i)}}{\w_i} = \frac{\partial{\sigma (w_j)}}{\w_j}
-            $$
+$$
+\frac{\partial{\sigma (w_i)}}{\w_i} = \frac{\partial{\sigma (w_j)}}{\w_j}
+$$
     - Risk Parity: 
         a. Assumption to equal MVO: When equal return to risk contribution for all securities
         b. Optimization condition
