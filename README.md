@@ -8,6 +8,8 @@
 
 ```python
 
+from mosek_api import mean_variance, max_ret, max_ir
+
 optimized_portfolio = mean_variance(
     alpha, risk_aversion, cov, active_risk=False, active_alpha=False,
     long_only=True, return_full_result=False,
@@ -36,7 +38,7 @@ optimized_portfolio = max_ir(
 
 ### Risk Based Optimization 
 
-Traditional Mean-Variance optimization is **notoriously sensitive** to errors in the estimation of inputs. One way to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
+Traditional Mean-Variance optimization is **notoriously sensitive** to errors in the estimation of inputs. One way that can help to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
 
 1. Min Variance: 
     
@@ -160,7 +162,9 @@ optimized_weight = max_div_vol(cov, max_std,
                 budget=1, long_only=True)
 ```
 
+### Black-Litterman
 
+Black-Litterman is a Bayesian based method for robust portfolio.
 
 
 ## Constraint Attribution
