@@ -4,10 +4,11 @@
 
 ## Available Models
 
+### Mean Variance Optimization
 
 ### Risk Based Optimization 
 
-Traditional Mean-Variance optimization is notoriously sensitive to errors in the estimation of inputs. One way to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
+Traditional Mean-Variance optimization is **notoriously sensitive** to errors in the estimation of inputs. One way to mitigate the gap here is to base optimization only on risk related inputs. Risk based optimization is legit at least from the following two pespectives. From a statistical perspective, the estimation of risk measures (covariance, variance, etc..) is usually more robust than that of expected return. From a financial theory pespective, efficient exposure to risk is the key to harvest risk premium. One can also take the risk based optimization as a mean variance optimization with strong structure assumed as follows:
 
 1. Min Variance: 
     
@@ -31,7 +32,17 @@ $$
 \frac{\partial{\sigma (w_i)}}{\partial w_i} * w_i = \frac{\partial{\sigma (w_j)}}{\partial w_j} * w_j
 $$       
 
-3. Maximum Diversification: 
+
+3. Risk Budget:
+
+    b. Optimization condition
+
+$$
+\frac{\partial{\sigma (w_i)}}{\partial w_i} * w_i / b_i = \frac{\partial{\sigma (w_j)}}{\partial w_j} * w_j / b_j
+$$  
+
+
+4. Maximum Diversification: 
     
     a. Assumption to equal MVO: equal correlation and equal expected return for all securities
     
@@ -41,13 +52,6 @@ $$
 \frac{\partial{\sigma (w_i)}}{\partial w_i} * \frac{1}{\sigma_i} = \frac{\partial{\sigma (w_j)}}{\partial w_j} * \frac{1}{\sigma_j}
 $$  
 
-4. Risk Budget:
-
-    b. Optimization condition
-
-$$
-\frac{\partial{\sigma (w_i)}}{\partial w_i} * w_i / b_i = \frac{\partial{\sigma (w_j)}}{\partial w_j} * w_j / b_j
-$$  
 
 **Min Variance**
 
@@ -86,7 +90,7 @@ w_i * \frac{\partial R_w}{\partial x_i} &= b_i * R_w
 \end{aligned}
 $$
 
-The above condition is unfortunately not convex directly. While when variance is used as risk measure, we will be able to formulate a restricted version of convex optimization on it. The first order optimal condition of the following optimization problem is exactly the risk budget condition. Hence we can rely on it for risk budget optimization
+The above condition is unfortunately not convex directly. While when variance is used as risk measure, we will be able to formulate a restricted version of convex optimization on it. The first order optimal condition of the following optimization problem is exactly the risk budget condition. Hence we can rely on it for risk budget optimization. While it should be noted that, with such implementation, we wil not be able to add further constraints since it will change the 1st order condition.
 
 $$
 \begin{aligned}
@@ -111,6 +115,10 @@ optimized_weight = risk_parity(covariance_matrix)
 ```
 
 **Maximum Diversification Portfolio**
+
+Maximum Diversification portfolio as suggested by its name seeks to maximize the diversification ratio $frac{w^T \Sigma w}{w^T \sigma **0.5}$. In the financial theory, diversification has long been identified as the only "free lunch" in the investment world. The maximum diversification portfolio seeks to exploit the full potential of diversification in terms of correlation structure. It should be noted that the optimized portfolio is rather sensitive to estimation of correlation, which might cause problem in crash periods when correlation structure broke.
+
+It can be applied with customized feasible set (other constraints like standard deviation threshold, max holding, etc)
 
 ```python
 from mosek_api import max_div
