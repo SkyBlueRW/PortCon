@@ -146,7 +146,7 @@ optimized_weight = risk_parity(covariance_matrix)
 
 **Maximum Diversification Portfolio**
 
-Maximum Diversification portfolio as suggested by its name seeks to maximize the diversification ratio $\frac{w^T \Sigma w}{w^T \sigma ^{0.5}}$. In the financial theory, diversification has long been identified as the only "free lunch" in the investment world. The maximum diversification portfolio seeks to exploit the full potential of diversification in terms of correlation structure. It should be noted that the optimized portfolio is rather sensitive to estimation of correlation, which might cause problem in crash periods when correlation structure broke.
+Maximum Diversification portfolio as suggested by its name seeks to maximize the diversification ratio $\frac{w^T \sigma}{\sqrt{w^T \Sigma w}}$. In the financial theory, diversification has long been identified as the only "free lunch" in the investment world. The maximum diversification portfolio seeks to exploit the full potential of diversification in terms of correlation structure. It should be noted that the optimized portfolio is rather sensitive to estimation of correlation, which might cause problem in crash periods when correlation structure broke.
 
 The maximum diversification is applied with quadractic optimization hence it can be applied with customized feasible set (other constraints like standard deviation threshold, max holding, etc)
 
