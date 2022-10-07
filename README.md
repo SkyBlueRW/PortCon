@@ -192,7 +192,19 @@ $$
 Assuming all constraint function g are diffrentiable, Scherer & Xu (2007) provide the following decomposition 
 
 
+$$
+\begin{aligned}
+\lambda Qx^{\star} &= \alpha + \sum \bigtriangledown f_j(x^{\star}) - \sum \pi_i \bigtriangledown g_i(x^{\star}) \\
+x^{\star} &= \frac{1}{\lambda} Q^{-1}\alpha + \sum \frac{1}{\lambda} Q^{-1} \bigtriangledown f_j(x^{\star}) - \sum \pi_i  \frac{1}{\lambda} Q^{-1}\bigtriangledown g_i(x^{\star}) \\
+x^{\star} &= x_u + \sum_j x_j + \sum_i x_i
+\end{aligned}
+$$
 
+- The above decomposition originates from the first order condition of KKT. $\pi_{i}$ is the shadow price of constraint $g_i$
+- Formula 1 above is the decompostiohn of implied alpha. Formula 2 is the active holding decomposition
+- $\lambda Q x^{\star}$ is called as implied alpha due to the reason that in an unconstraint MVO optimization, it is the alpha that will lead to $x^{\star}$ as optimal portfolio
+- $x_u = \frac{1}{\lambda} Q^{-1} \alpha$ is the solution of the unconstrained optimization $\max_x{\alpha^T x - \frac{1}{2}\lambda x^TQx}$
+- $x_u$ is actually a multiple of the characteristic portfolio of alpha; $\frac{Q^{-1} \alpha}{\alpha^T Q^{-1} \alpha}$ (The minimum variance portfolio given exposure to alpha as 1). 
 
 
 **Literature on Constraint Attribution**
