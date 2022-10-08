@@ -1,9 +1,12 @@
-##### Table of Contents  
-[Portfolio Construction with Convex optimization](#Portfolio Construction with Convex optimization)  
-[Available Models](##Available Models)  
-[Mean Variance Optimization](###Mean Variance Optimization)  
-
-
+- [Portfolio Construction with Convex optimization](#portfolio-construction-with-convex-optimization)
+  * [Available Models](#available-models)
+    + [Mean Variance Optimization](#mean-variance-optimization)
+    + [Risk Based Optimization](#risk-based-optimization)
+    + [Black-Litterman](#black-litterman)
+  * [Constraint Attribution](#constraint-attribution)
+  * [Basic Technical Details in Convex Optimization](#basic-technical-details-in-convex-optimization)
+  * [Reference](#reference)
+  
 # Portfolio Construction with Convex optimization
 
 
