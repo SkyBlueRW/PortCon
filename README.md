@@ -1,3 +1,10 @@
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
+
 
 # Portfolio Construction with Convex optimization
 
@@ -206,7 +213,7 @@ $$
 - $x_u = \frac{1}{\lambda} Q^{-1} \alpha$ is the solution of the unconstrained optimization $\max_x{\alpha^T x - \frac{1}{2}\lambda x^TQx}$
 - $x_u$ is actually a multiple of the characteristic portfolio of alpha; $\frac{Q^{-1} \alpha}{\alpha^T Q^{-1} \alpha}$ (The minimum variance portfolio given exposure to alpha as 1). 
 - When dealing with linear constraint $Ax <= 0$, $\sum \pi_i  \frac{1}{\lambda} Q^{-1}\bigtriangledown g_i(x^{\star}) = \sum \pi_i \frac{1}{\lambda} Q^{-1}A_i$, $A_i$ is the i-th constraint of all constraints. We can interprete it as the **shadow price weighted characteristic portfolio of each constraints**. When the constraint is not binding, the shadow price will be 0 and the constraint will not play with any rule in the decompostion
-- Tutuncu (2012) argued that, the decomposition of holding is not intuitive due to the high correlation between different constraints. In such case the decomposition of implied alpha can provide a more precise decomposition.
+- Tutuncu (2012) argued that, the decomposition of holding is not intuitive due to the high correlation between different constraints (the existence of Q in the equation). In such case the decomposition of implied alpha can provide a more precise decomposition.
 
 **Literature on Constraint Attribution**
 
