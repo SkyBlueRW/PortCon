@@ -1,9 +1,7 @@
 ##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="headers"/>
-## Headers
+[Portfolio Construction with Convex optimization](#Portfolio Construction with Convex optimization)  
+[Available Models](##Available Models)  
+[Mean Variance Optimization](###Mean Variance Optimization)  
 
 
 # Portfolio Construction with Convex optimization
