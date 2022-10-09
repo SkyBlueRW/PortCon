@@ -12,7 +12,15 @@
 
 ## Available Models
 
+Various portfolio optimization models
+
 ### Mean Variance Optimization
+
+API for Mean Variance Optimization style models. Presented in various format
+    
+    - Traditional mean variance (quadratic utility)
+    - Maximize expected return with risk constraint
+    - Maximize Sharpe ratio style (expected return / risk)
 
 ```python
 
