@@ -17,12 +17,13 @@ Various portfolio optimization models
 ### Mean Variance Optimization
 
 API for Mean Variance Optimization style models. Presented in various format
-    
+
     - Traditional mean variance (quadratic utility)
     - Maximize expected return with risk constraint
     - Maximize Sharpe ratio style (expected return / risk)
 
 ```python
+# Code Demo
 
 from mosek_api import mean_variance, max_ret, max_ir
 
@@ -102,6 +103,8 @@ $$
 **Min Variance**
 
 ```python
+# Code Demo
+
 from mosek_api import risk_budget
 
 optimized_weight = min_var(cov, long_only=True, budget=1, max_holding=None, min_holding=None)
@@ -167,6 +170,8 @@ Maximum Diversification portfolio as suggested by its name seeks to maximize the
 The maximum diversification is applied with quadractic optimization hence it can be applied with customized feasible set (other constraints like standard deviation threshold, max holding, etc)
 
 ```python
+# Code Demo
+
 from mosek_api import max_div
 
 # Pure Max diversification with fully invest 
@@ -186,6 +191,9 @@ Black-Litterman is a Bayesian based method for robust portfolio.
 ## Constraint Attribution
 
 ```python
+
+# Code Demo
+
 from mosek_api import implied_alpha_decompose, holding_decompose, return_attribute
 
 constraint_attr = holding_decompose(res_dict)
