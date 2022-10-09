@@ -219,9 +219,9 @@ $$
 
 $$
 \begin{aligned}
-x^{\star} &=  \beta_{cu} x_u + x_{orthogonal} \\
-x_{u} &= \frac{1}{\lambda} Q^{-1} \alpha \\
-x_{orthogonal} &= \sum (\beta_{tu}x_u - \frac{1}{\lambda}Q^{-1} \bigtriangledown f_j(x^{\star})) + \sum \pi_i(\beta_{pu} x_u - \frac{1}{\lambda}Q^{-1} \bigtriangledown g_i(x^{\star})) \\
+x^{\star} &= x_u + \sum_j x_j + \sum_i x_i \\
+&=x_u + \sum_j (\beta_{ju}x_u + x_{j,orthogonal}) + \sum_i (\beta_{iu}x_u + x_{i,orthognoal})  \\
+&=(1 + \sum_j \beta_{ju} + \sum_i \beta_{iu}) x_u + (\sum_j x_{j, orthogonal} + \sum_i x_{i, orthogonal}) \\
 \beta_{cu} &= \frac{x^{\star}Qx_u}{x_u^TQx_u} \\
 \end{aligned}
 $$
