@@ -186,8 +186,6 @@ constraint_attr = return_attribute(ret, holding_dict, block_name=None)
 
 The goal of constraint attribution is to decompose the ex-post performance into each constraints applied in the optimization. In practical, investors usually add constraint on the portfolio for robust ex-post performance. From a ex-ante perspective, the optimized portfolio will always have worse characteristic since the feasible set is smaller. It requires another perspective to look into how is the constraints working for the portfolios. Constraint attribution is one of the techniques that we can rely on for such purpose.
 
-**Lagrangian Dual Decomposition**
-
 For a portfolio optimization problem as below. Function f can stand for transaction cost, market impact ..etc. Function g refers to portfolio constraint that we look to decompose. 
 
 $$
@@ -199,7 +197,7 @@ $$
 
 Assuming all constraint function g are diffrentiable, Scherer & Xu (2007) provide the following decomposition 
 
-**First Way to Decompose**
+**Lagrangian Dual Decomposition**
 
 $$
 \begin{aligned}
@@ -217,7 +215,7 @@ $$
 - When dealing with linear constraint $Ax <= 0$, $\sum \pi_i  \frac{1}{\lambda} Q^{-1}\bigtriangledown g_i(x^{\star}) = \sum \pi_i \frac{1}{\lambda} Q^{-1}A_i$, $A_i$ is the i-th constraint of all constraints. We can interprete it as the **shadow price weighted characteristic portfolio of each constraints**. When the constraint is not binding, the shadow price will be 0 and the constraint will not play with any rule in the decompostion
 - Tutuncu (2012) argued that, the decomposition of holding is not intuitive due to the high correlation between different constraints (the existence of Q in the equation). In such case the decomposition of implied alpha can provide a more precise decomposition.
 
-**Second Way to Decompose**
+**Further Analysis by projecting on alpha space**
 
 $$
 \begin{aligned}
@@ -230,6 +228,26 @@ $$
 
 - Another way to further decompose is to project the wegiht on to alpha charateristic portfolio and those orthogonal
 - Orthogonal part can be taken as unrewarded risk 
+
+**Second Order Constraint Decomposition**
+
+$$
+\begin{aligned}
+\max_x \quad &{\alpha^Tx + \sum f_i(x)} \\
+\sqrt{x^TQx} &<= v\\
+g_i(x) &<=0
+\end{aligned}
+$$
+
+When the standard deviation constraint is binding. We can perform similar decomposition.
+
+$$
+\begin{aligned}
+\frac{\pi^{r}Qx^{\star}}{\sqrt{x^{\star T}Qx^{\star}}} &= \alpha + \sum \bigtriangledown f_i(x^{\star}) - \sum \pi_i \bigtriangledown g_i(x^{\star}) \\
+x^{\star} &= \frac{vQ^{-1}}{\pi^r} \alpha + \sum \frac{vQ^{-1}}{\pi^r}\bigtriangledown f_i(x^{\star}) - \sum \pi_i \frac{vQ^{-1}}{\pi^r} \bigtriangledown g_i(x^{\star})
+\end{aligned}
+$$
+
 
 **Literature on Constraint Attribution**
 
