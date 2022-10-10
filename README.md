@@ -16,7 +16,7 @@ Various portfolio optimization models
 
 ### Mean Variance Optimization
 
-API for Mean Variance Optimization style models. Presented in various format
+API for Mean Variance Optimization style models. Presented in various formats
 
     - Traditional mean variance (quadratic utility)
     - Maximize expected return with risk constraint
@@ -187,6 +187,11 @@ optimized_weight = max_div_vol(cov, max_std,
 
 Black-Litterman is a Bayesian based method for robust portfolio.
 
+$$
+\begin{aligned}
+r &~ N(\mu, \Sigma)
+\end{aligned}
+$$
 
 ## Constraint Attribution
 
