@@ -200,13 +200,14 @@ $$
 
 $$
 \begin{aligned}
-\mu | P\mu=Q+\epsilon &\sim N(\mu^{\star}, M) \\
+\mu | P\mu&=Q+\epsilon \sim N(\mu^{\star}, M) \\
 \mu^{\star} &= [(\tau \Sigma)^{-1} + P^T\Sigma^{-1}P]^{-1}[(\tau \Sigma)^{-1}\mu^{0} + P^T\Sigma^{-1}Q] \\
 M &= [(\tau \Sigma)^{-1} + P^T\Sigma^{-1}P]
 \end{aligned}
 $$
 
 5. The posterior distribution of security return as shown below:
+
 $$
 \begin{aligned}
 E[r|p\mu=Q+\epsilon] &= \mu^{\star} \\
