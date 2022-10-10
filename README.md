@@ -185,7 +185,7 @@ optimized_weight = max_div_vol(cov, max_std,
 
 ### Black-Litterman
 
-Black-Litterman is a Bayesian based method for robust portfolio. Suppose r is the security return vector. $\mu$ and $\Sigma$ are their expected value and covariance matrix respectively..
+Black-Litterman is a Bayesian based method for robust portfolio. Suppose r is the security return vector. $\mu$ and $\Sigma$ are their expected value and covariance matrix respectively. Black-Litterman is performing the following Bayesian procedures. The final portfolio is based on a prior in the form of an existing portfolio as a starting point and mix it with investor views for final portfolio.
 
 $$
 \begin{aligned}
@@ -193,8 +193,27 @@ r &\sim N(\mu, \Sigma) \\
 \end{aligned}
 $$
 
-1. Pior distribution on Expected Return $\mu \sim N(\mu^{0}, \tau \Sigma)$
-2. View expressed as linear equation: $P\mu = Q + \epsilon, \epsilon \sim N(0, \Delta)$
+1. Implied expected return $\mu^{0} = \lambda \Sigma x^{0}$ 
+2. Pior distribution on Expected Return $\mu \sim N(\mu^{0}, \tau \Sigma)$
+3. View expressed as linear equations: $P\mu = Q + \epsilon, \epsilon \sim N(0, \Omega)$
+4. The posterior distribution of expected return as shown below:
+
+$$
+\begin{aligned}
+\mu | P\mu=Q+\epsilon &\sim N(\mu^{\star}, M) \\
+\mu^{\star} &= [(\tau \Sigma)^{-1} + P^T\Sigma^{-1}P]^{-1}[(\tau \Sigma)^{-1}\mu^{0} + P^T\Sigma^{-1}Q] \\
+M &= [(\tau \Sigma)^{-1} + P^T\Sigma^{-1}P]
+\end{aligned}
+$$
+
+5. The posterior distribution of security return as shown below:
+$$
+\begin{aligned}
+E[r|p\mu=Q+\epsilon] &= \mu^{\star} \\
+Var[r|p\mu=Q+\epsilon] &= \Sigma + M
+\end{aligned}
+$$
+
 
 ## Constraint Attribution
 
