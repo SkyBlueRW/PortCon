@@ -185,14 +185,16 @@ optimized_weight = max_div_vol(cov, max_std,
 
 ### Black-Litterman
 
-Black-Litterman is a Bayesian based method for robust portfolio. Suppose r is the security return. $\mu$ and $\Sigma$ are their expected value and covariance matrix respectively. BL model is alined with the Bayesian Framework in the following manner.
+Black-Litterman is a Bayesian based method for robust portfolio. Suppose r is the security return vector. $\mu$ and $\Sigma$ are their expected value and covariance matrix respectively..
 
 $$
 \begin{aligned}
-r &\sim N(\mu, \Sigma) \
-\mu &\sim N(\mu^{0}, \tau \Sigma)
+r &\sim N(\mu, \Sigma) \\
 \end{aligned}
 $$
+
+1. Pior distribution on Expected Return $\mu \sim N(\mu^{0}, \tau \Sigma)$
+2. View expressed as linear equation: $P\mu = Q + \epsilon, \epsilon \sim N(0, \Delta)$
 
 ## Constraint Attribution
 
