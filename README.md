@@ -189,7 +189,7 @@ Black-Litterman is a Bayesian based method for robust portfolio.
 
 $$
 \begin{aligned}
-r &~ N(\mu, \Sigma)
+r &\sim N(\mu, \Sigma)
 \end{aligned}
 $$
 
